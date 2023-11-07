@@ -18,16 +18,28 @@
         <h1 id="white">Generate a</h1>
         <h1 id="green">random password</h1>
         <h2 id="gray">Never use an insecure password again.</h2>
-        <button id="password-btn" onclick="generatePasswords()">
-          Generate passwords
+        <button id="password-btn" onclick="generatePassword()">
+          Generate password
         </button>
-        <div class="hr"></div>
-        <div class="generated-pws">
-          <p id="password1"></p>
-          <p id="password2"></p>
+        <div class="pw-section">
+          <p id="password"></p>
+          <div onclick="copyPassword()" class="copy">Copy</div>
         </div>
-        <div>
-          <input type="checkbox" value="" />
+        <input type="range" id="rangeSlider" min="10" max="18" />
+        <label id="length" for="rangeSlider"
+          >Password length:<span class="number"></span
+        ></label>
+        <div class="labels">
+          <label>
+            <input id="check-num" type="checkbox" checked />
+            Numbers
+          </label>
+          <label>
+            <input id="check-cap" type="checkbox" checked /> Capitals
+          </label>
+          <label>
+            <input id="check-sym" type="checkbox" checked /> Symbols
+          </label>
         </div>
         <script src="index.js"></script>
       </div>

@@ -1,111 +1,58 @@
-const characters = [
-  "A",
-  "B",
-  "C",
-  "D",
-  "E",
-  "F",
-  "G",
-  "H",
-  "I",
-  "J",
-  "K",
-  "L",
-  "M",
-  "N",
-  "O",
-  "P",
-  "Q",
-  "R",
-  "S",
-  "T",
-  "U",
-  "V",
-  "W",
-  "X",
-  "Y",
-  "Z",
-  "a",
-  "b",
-  "c",
-  "d",
-  "e",
-  "f",
-  "g",
-  "h",
-  "i",
-  "j",
-  "k",
-  "l",
-  "m",
-  "n",
-  "o",
-  "p",
-  "q",
-  "r",
-  "s",
-  "t",
-  "u",
-  "v",
-  "w",
-  "x",
-  "y",
-  "z",
-  "0",
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8",
-  "9",
-  "~",
-  "`",
-  "!",
-  "@",
-  "#",
-  "$",
-  "%",
-  "^",
-  "&",
-  "*",
-  "(",
-  ")",
-  "_",
-  "-",
-  "+",
-  "=",
-  "{",
-  "[",
-  "}",
-  "]",
-  ",",
-  "|",
-  ":",
-  ";",
-  "<",
-  ">",
-  ".",
-  "?",
-  "/",
-];
+const characters =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~`!@#$%^&*()_-+=[{|:;<>,.?/";
 
-let password1El = document.getElementById("password1");
-let password2El = document.getElementById("password2");
-const passwordLength = 15;
+let passwordEl = document.getElementById("password");
+let numberEl = document.querySelector(".number");
+const handleNumEl = document.getElementById("check-num");
+const handleCapEl = document.getElementById("check-cap");
+const handleSymEl = document.getElementById("check-sym");
+const handleLengthEl = document.getElementById("rangeSlider");
+let passwordLength = handleLengthEl.value;
 
-function generatePasswords() {
-  let password1 = "";
-  let password2 = "";
+let numbersIncluded = true;
+let uppercaseIncluded = true;
+let symbolsIncluded = true;
+
+// lengthEl.textContent = `Password length: ${passwordLength}`;
+
+handleCapEl.addEventListener("change", function () {
+  uppercaseIncluded = handleCapEl.checked;
+  generatePassword();
+});
+
+handleNumEl.addEventListener("change", function () {
+  numbersIncluded = handleNumEl.checked;
+  generatePassword();
+});
+
+handleSymEl.addEventListener("change", function () {
+  symbolsIncluded = handleSymEl.checked;
+  generatePassword();
+});
+
+handleLengthEl.addEventListener("input", function () {
+  passwordLength = handleLengthEl.value;
+  generatePassword();
+});
+
+function generatePassword() {
+  const includedChars =
+    "abcdefghijklmnopqrstuvwxyz" +
+    (uppercaseIncluded ? "ABCDEFGHIJKLMNOPQRSTUVWXYZ" : "") +
+    (numbersIncluded ? "0123456789" : "") +
+    (symbolsIncluded ? "~`!@#$%^&*()_-+=[{|:;<>,.?/" : "");
+  let password = "";
 
   for (let i = 0; i < passwordLength; i++) {
-    password1 += characters[Math.floor(Math.random() * characters.length)];
-    password2 += characters[Math.floor(Math.random() * characters.length)];
+    password += includedChars[Math.floor(Math.random() * includedChars.length)];
   }
-  return (
-    (password1El.textContent = password1) &&
-    (password2El.textContent = password2)
-  );
+
+  passwordEl.textContent = password;
+  numberEl.textContent = ` ${passwordLength}`;
+}
+
+generatePassword(); // Generate a password when the page loads
+
+function copyPassword() {
+  navigator.clipboard.writeText(passwordEl.textContent);
 }
