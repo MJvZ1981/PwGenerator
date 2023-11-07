@@ -130,7 +130,7 @@ button:hover {
   justify-content: center;
 }
 
-.copy {
+#copy {
   position: absolute;
   background-color: #10b981;
   right: 7px;
@@ -158,4 +158,14 @@ button:hover {
   font-size: 14;
   font-weight: bold;
   padding-left: 8px;
+}
+
+#password-btn:active,
+#copy:active {
+  box-shadow: inset 1px 2px rgb(6, 32, 27);
+}
+
+#password-btn:hover,
+#copy:hover {
+  background-color: #248868;
 }
