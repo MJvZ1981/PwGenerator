@@ -96,6 +96,7 @@ body {
   height: 39px;
   border-radius: 6px;
   background-color: #273549;
+  border: 2px solid silver;
   display: flex;
   align-items: center;
   justify-content: center;
