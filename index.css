@@ -93,13 +93,13 @@ body {
   letter-spacing: 0.05em;
   font-size: 14px;
   color: #d5d4d8;
-  padding-right: 6%;
+  padding-right: 10%;
 }
 
 .labels {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 12px;
 }
 
 label {
@@ -118,6 +118,7 @@ button:hover {
 #rangeSlider {
   accent-color: #10b981;
   padding: 5px;
+  width: 100%;
 }
 
 #check-num,
@@ -154,13 +155,12 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: flex-end;
-  font-family: "Roboto", sans-serif;
   font-size: 12px;
+  width: 100%;
 }
 
 .number {
-  color: #10b981;
+  color: #d5d4d8;
   font-family: "Roboto", sans-serif;
   font-size: 14;
   font-weight: bold;

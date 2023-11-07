@@ -25,10 +25,12 @@
           <p id="password"></p>
           <div onclick="copyPassword()" class="copy">Copy</div>
         </div>
-        <input type="range" id="rangeSlider" min="10" max="18" />
-        <label id="length" for="rangeSlider"
-          >Password length:<span class="number"></span
-        ></label>
+
+        <div id="length" for="rangeSlider">
+          <input type="range" id="rangeSlider" min="10" max="40" /><span
+            class="number"
+          ></span>
+        </div>
         <div class="labels">
           <label>
             <input id="check-num" type="checkbox" checked />
