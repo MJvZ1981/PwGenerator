@@ -30,35 +30,37 @@ body {
 }
 
 #white {
-  font-family: "Anton", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
   font-weight: 800;
   line-height: 40px;
-  letter-spacing: -0.025em;
   text-align: left;
+  font-weight: bold;
+  letter-spacing: -0.025em;
   color: white;
   margin: 0;
   padding: 0;
+  padding-bottom: 1px;
 }
 
 #green {
-  font-family: "Anton", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 40px;
   font-weight: 800;
   line-height: 40px;
-  letter-spacing: -0.025em;
   text-align: left;
+  letter-spacing: -0.025em;
   color: #4adf86;
   margin: 0;
   padding: 0;
+  padding-bottom: 3px;
 }
 
 #gray {
-  font-family: "Anton", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
-  letter-spacing: 0em;
   text-align: left;
   color: #d5d4d8;
   margin: 0;
@@ -69,6 +71,7 @@ body {
   background-color: #10b981;
   color: white;
   border: none;
+  font-family: "Roboto", sans-serif;
   border-radius: 6px;
   width: 195px;
   height: 42px;
@@ -96,6 +99,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Anton", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #d5d4d8;
 }
